@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Demo</string>
+    <string name="test">测试</string>
+    <string name="swip_menu_listview">左右滑动的listview</string>
+    <string name="simple">简单的左右滑动的listview</string>
+    <string name="different_menu">左右滑动显示不同类型的menu的listview</string>
+</resources>
