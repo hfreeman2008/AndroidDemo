@@ -9,3 +9,8 @@
 (2) diff menu swipe listview
 </br>
 ![Image text](diff_menu_swip_listview.gif)
+
+
+</br>
+csdn blog:
+http://blog.csdn.net/hfreeman2008/article/details/53350339
