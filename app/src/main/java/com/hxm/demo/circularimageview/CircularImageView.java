@@ -7,6 +7,7 @@ import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -21,6 +22,11 @@ public class CircularImageView extends ImageView {
     private Bitmap image;
     private Paint paint;
     private Paint paintBorder;
+
+    private boolean showRoundRect = false;
+    private int roundRectPadding = 20;
+    private int roundRectXRadius = 30;
+    private int roundRectYRadius = 30;
 
     public CircularImageView(final Context context) {
         this(context, null);
@@ -57,6 +63,12 @@ public class CircularImageView extends ImageView {
         if(attributes.getBoolean(R.styleable.CircularImageView_shadow, false)) {
             addShadow();
         }
+
+        showRoundRect = attributes.getBoolean(R.styleable.CircularImageView_show_round_rect,false);
+        roundRectPadding = attributes.getDimensionPixelOffset(R.styleable.CircularImageView_round_rect_padding,roundRectPadding);
+        roundRectXRadius = attributes.getDimensionPixelOffset(R.styleable.CircularImageView_round_rect_x_radius,roundRectXRadius);
+        roundRectYRadius = attributes.getDimensionPixelOffset(R.styleable.CircularImageView_round_rect_y_radius,roundRectYRadius);
+
     }
 
     public void setBorderWidth(int borderWidth) {
@@ -96,22 +108,35 @@ public class CircularImageView extends ImageView {
                     Shader.TileMode.CLAMP);
             paint.setShader(shader);
 
-            // circleCenter is the x or y of the view's center
-            // radius is the radius in pixels of the cirle to be drawn
-            // paint contains the shader that will texture the shape
-            int circleCenter = (canvasSize - (borderWidth * 2)) / 2;
-
+            //draw Rect image
+            if(showRoundRect){
+                canvas.drawRoundRect(
+                        new RectF(
+                                roundRectPadding,
+                                roundRectPadding,
+                                canvasSize-roundRectPadding,
+                                canvasSize-roundRectPadding),
+                        roundRectXRadius,
+                        roundRectYRadius,
+                        paint);
+            }else {
+                // circleCenter is the x or y of the view's center
+                // radius is the radius in pixels of the cirle to be drawn
+                // paint contains the shader that will texture the shape
+                int circleCenter = (canvasSize - (borderWidth * 2)) / 2;
+                //draw border circle
             canvas.drawCircle(
                     circleCenter + borderWidth,
                     circleCenter + borderWidth,
                     ((canvasSize - (borderWidth * 2)) / 2) + borderWidth - 4.0f,
                     paintBorder);
-
+                //draw circle image
             canvas.drawCircle(
                     circleCenter + borderWidth,
                     circleCenter + borderWidth,
                     ((canvasSize - (borderWidth * 2)) / 2) - 4.0f,
                     paint);
+            }
         }
     }
 

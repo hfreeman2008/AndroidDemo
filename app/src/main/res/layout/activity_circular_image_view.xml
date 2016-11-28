@@ -27,4 +27,16 @@
         app:border_color="#EEEEEE"
         app:border_width="4dp"
         app:shadow="true" />
+
+    <com.hxm.demo.circularimageview.CircularImageView
+        android:id="@+id/roundRectImageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@id/circularImageView"
+        android:src="@drawable/circle_image"
+        app:show_round_rect="true"
+        app:round_rect_padding="10dp"
+        app:round_rect_x_radius="20dp"
+        app:round_rect_y_radius="20dp"
+        />
 </RelativeLayout>

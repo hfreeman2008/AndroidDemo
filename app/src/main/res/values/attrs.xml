@@ -6,6 +6,10 @@
         <attr name="border_width" format="dimension"></attr>
         <attr name="border_color" format="color"></attr>
         <attr name="shadow" format="boolean"></attr>
+        <attr name="show_round_rect" format="boolean"></attr>
+        <attr name="round_rect_padding" format="dimension"></attr>
+        <attr name="round_rect_x_radius" format="dimension"></attr>
+        <attr name="round_rect_y_radius" format="dimension"></attr>
     </declare-styleable>
 
     <declare-styleable name="Theme">
