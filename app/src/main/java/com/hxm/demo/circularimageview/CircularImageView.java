@@ -64,8 +64,9 @@ public class CircularImageView extends ImageView {
     }
 
     public void setBorderColor(int borderColor) {
-        if (paintBorder != null)
+        if (paintBorder != null) {
             paintBorder.setColor(borderColor);
+        }
         this.invalidate();
     }
 
