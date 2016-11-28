@@ -12,12 +12,19 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.hxm.demo.circularimageview.CircularImageViewActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/circle_image"/>
+
     <com.hxm.demo.circularimageview.CircularImageView
-        android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:id="@+id/circularImageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@id/imageView"
         android:src="@drawable/circle_image"
         app:border_color="#EEEEEE"
         app:border_width="4dp"
         app:shadow="true" />
-
 </RelativeLayout>
