@@ -22,7 +22,5 @@ public class CircularImageViewActivity extends AppCompatActivity {
         circularImageView.setBorderColor(getResources().getColor(R.color.colorgreen));
         circularImageView.setBorderWidth(5);
         circularImageView.addShadow();
-
-
     }
 }
