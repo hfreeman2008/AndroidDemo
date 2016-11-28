@@ -2,6 +2,7 @@
     <string name="app_name">Demo</string>
     <string name="test">test</string>
     <string name="swip_menu_listview">swip menu listview</string>
+    <string name="circle_image">circle image</string>
     <string name="simple">simple menu</string>
     <string name="different_menu">different menu</string>
     <string name="menu_listview_open">Open</string>
