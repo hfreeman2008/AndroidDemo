@@ -15,7 +15,7 @@ csdn blog:
 http://blog.csdn.net/hfreeman2008/article/details/53350339
 
 </br>
-2.circle image:
+2.customer image:
 
-![Image text](circle_image.png)
+![Image text](customer_image_view.png.png)
 
