@@ -71,6 +71,7 @@ public class CircularImageView extends ImageView {
             setBorderColor(attributes.getColor(R.styleable.CircularImageView_border_color, Color.WHITE));
         }
 
+
         if(attributes.getBoolean(R.styleable.CircularImageView_shadow, false)) {
             addShadow();
         }
