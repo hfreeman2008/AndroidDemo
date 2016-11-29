@@ -17,5 +17,5 @@ http://blog.csdn.net/hfreeman2008/article/details/53350339
 </br>
 2.customer image:
 
-![Image text](customer_image_view.png.png)
+![Image text](customer_image_view.png)
 
