@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/button_swip_menu_listview"
-        android:text="@string/circle_image"
+        android:text="@string/custer_image"
         />
 
     <Button

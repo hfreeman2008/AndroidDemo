@@ -6,7 +6,10 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.ComposeShader;
 import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.RadialGradient;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
@@ -27,6 +30,14 @@ public class CircularImageView extends ImageView {
     private int roundRectPadding = 20;
     private int roundRectXRadius = 30;
     private int roundRectYRadius = 30;
+
+    private boolean isShowGradient = false;
+    private static final int[] mColors = new int[] {
+            Color.TRANSPARENT, Color.TRANSPARENT, Color.WHITE
+    };
+    private static final float[] mPositions = new float[] {
+            0, 0.6f, 1f
+    };
 
     public CircularImageView(final Context context) {
         this(context, null);
@@ -68,7 +79,7 @@ public class CircularImageView extends ImageView {
         roundRectPadding = attributes.getDimensionPixelOffset(R.styleable.CircularImageView_round_rect_padding,roundRectPadding);
         roundRectXRadius = attributes.getDimensionPixelOffset(R.styleable.CircularImageView_round_rect_x_radius,roundRectXRadius);
         roundRectYRadius = attributes.getDimensionPixelOffset(R.styleable.CircularImageView_round_rect_y_radius,roundRectYRadius);
-
+        isShowGradient = attributes.getBoolean(R.styleable.CircularImageView_is_show_gradient,false);
     }
 
     public void setBorderWidth(int borderWidth) {
@@ -124,13 +135,31 @@ public class CircularImageView extends ImageView {
                 // radius is the radius in pixels of the cirle to be drawn
                 // paint contains the shader that will texture the shape
                 int circleCenter = (canvasSize - (borderWidth * 2)) / 2;
-                //draw border circle
+            //draw border circle
             canvas.drawCircle(
                     circleCenter + borderWidth,
                     circleCenter + borderWidth,
                     ((canvasSize - (borderWidth * 2)) / 2) + borderWidth - 4.0f,
                     paintBorder);
-                //draw circle image
+
+            if(isShowGradient){
+                RadialGradient radialGradient = new RadialGradient(
+                        circleCenter,
+                        circleCenter,
+                        circleCenter,
+                        mColors,
+                        mPositions,
+                        Shader.TileMode.CLAMP);
+
+                ComposeShader composeShader = new ComposeShader(
+                        shader,
+                        radialGradient,
+                        PorterDuff.Mode.SRC_OVER);
+
+                paint.setShader(composeShader);
+            }
+
+            //draw circle image
             canvas.drawCircle(
                     circleCenter + borderWidth,
                     circleCenter + borderWidth,

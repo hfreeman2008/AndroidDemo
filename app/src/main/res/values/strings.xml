@@ -2,12 +2,16 @@
     <string name="app_name">Demo</string>
     <string name="test">test</string>
     <string name="swip_menu_listview">swip menu listview</string>
-    <string name="circle_image">circle image</string>
     <string name="simple">simple menu</string>
     <string name="different_menu">different menu</string>
     <string name="menu_listview_open">Open</string>
     <string name="on_swipe_start">onSwipeStart</string>
     <string name="on_swipe_end">onSwipeEnd</string>
     <string name="long_click">long click</string>
+    <string name="custer_image">custer image</string>
 
+    <string name="origin_image">origin image view </string>
+    <string name="circle_image">circle image view </string>
+    <string name="circle_gradient_image">circle gradient image view </string>
+    <string name="rect_image">rect image view </string>
 </resources>

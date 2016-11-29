@@ -12,31 +12,85 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.hxm.demo.circularimageview.CircularImageViewActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/circle_image"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <com.hxm.demo.circularimageview.CircularImageView
-        android:id="@+id/circularImageView"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_below="@id/imageView"
-        android:src="@drawable/circle_image"
-        app:border_color="#EEEEEE"
-        app:border_width="4dp"
-        app:shadow="true" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <com.hxm.demo.circularimageview.CircularImageView
-        android:id="@+id/roundRectImageView"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_below="@id/circularImageView"
-        android:src="@drawable/circle_image"
-        app:show_round_rect="true"
-        app:round_rect_padding="10dp"
-        app:round_rect_x_radius="20dp"
-        app:round_rect_y_radius="20dp"
-        />
+            <TextView
+                android:id="@+id/origin_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:text="@string/origin_image"/>
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/origin_tv"
+                android:src="@drawable/circle_image"/>
+
+            <TextView
+                android:id="@+id/circle_image_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_below="@id/imageView"
+                android:text="@string/circle_image"/>
+
+            <com.hxm.demo.circularimageview.CircularImageView
+                android:id="@+id/circularImageView"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/circle_image_tv"
+                android:src="@drawable/circle_image"
+                app:border_color="#EEEEEE"
+                app:border_width="4dp"
+                app:shadow="true" />
+
+            <TextView
+                android:id="@+id/circle_gradient_image_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageView"
+                android:layout_toRightOf="@id/circle_image_tv"
+                android:layout_marginLeft="120dp"
+                android:text="@string/circle_gradient_image"/>
+            <com.hxm.demo.circularimageview.CircularImageView
+                android:id="@+id/circularGradientImageView"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/circle_gradient_image_tv"
+                android:layout_toRightOf="@id/circularImageView"
+                android:src="@drawable/circle_image"
+                app:is_show_gradient="true"
+                app:border_color="#11ff55"
+                app:border_width="2dp"
+                app:shadow="true"
+                />
+
+            <TextView
+                android:id="@+id/rect_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_below="@id/circularImageView"
+                android:text="@string/rect_image"/>
+            <com.hxm.demo.circularimageview.CircularImageView
+                android:id="@+id/roundRectImageView"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/rect_image"
+                android:src="@drawable/circle_image"
+                app:show_round_rect="true"
+                app:round_rect_padding="10dp"
+                app:round_rect_x_radius="20dp"
+                app:round_rect_y_radius="20dp"
+                />
+
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>

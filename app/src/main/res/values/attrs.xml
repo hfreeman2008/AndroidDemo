@@ -10,6 +10,7 @@
         <attr name="round_rect_padding" format="dimension"></attr>
         <attr name="round_rect_x_radius" format="dimension"></attr>
         <attr name="round_rect_y_radius" format="dimension"></attr>
+        <attr name="is_show_gradient" format="boolean"></attr>
     </declare-styleable>
 
     <declare-styleable name="Theme">
