@@ -20,6 +20,8 @@
         <activity android:name=".swipelistview.SwipeMainActivity"/>
         <activity android:name=".circularimageview.CircularImageViewActivity">
         </activity>
+        <activity android:name=".autoscrollviewpager.AutoScrollViewPaperActivity">
+        </activity>
     </application>
 
 </manifest>

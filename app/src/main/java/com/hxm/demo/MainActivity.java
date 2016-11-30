@@ -7,11 +7,13 @@ import android.view.View;
 import android.widget.Button;
 import com.hxm.demo.circularimageview.CircularImageViewActivity;
 import com.hxm.demo.swipelistview.SwipeMainActivity;
+import com.hxm.demo.autoscrollviewpager.AutoScrollViewPaperActivity;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button button_swip_menu_listview;
     private Button button_circle_view;
+    private Button button_auto_scroll_view_paper;
     private Button button_test;
 
 
@@ -36,6 +38,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplication(),CircularImageViewActivity.class));
+            }
+        });
+
+        button_auto_scroll_view_paper = (Button)findViewById(R.id.button_auto_scroll_view_paper);
+        button_auto_scroll_view_paper.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplication(),AutoScrollViewPaperActivity.class));
             }
         });
 

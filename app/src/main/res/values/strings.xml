@@ -9,6 +9,7 @@
     <string name="on_swipe_end">onSwipeEnd</string>
     <string name="long_click">long click</string>
     <string name="custer_image">custer image</string>
+    <string name="auto_scroll_view_paper"> auto scroll view paper</string>
 
     <string name="origin_image">origin image view </string>
     <string name="circle_image">circle image view </string>
