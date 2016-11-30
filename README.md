@@ -21,3 +21,7 @@ http://blog.csdn.net/hfreeman2008/article/details/53350339
 
 csdn blog:
 http://blog.csdn.net/hfreeman2008/article/details/53381156
+
+##auto scroll view pager
+
+https://github.com/Trinea/android-auto-scroll-view-pager
