@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.hxm.demo.R;
 
@@ -31,10 +33,11 @@ public class AutoScrollViewPaperActivity extends AppCompatActivity {
 
     private void init() {
         drawbleDatas = new ArrayList<Drawable>();
-        drawbleDatas.add(getResources().getDrawable(R.drawable.circle_image));
-        drawbleDatas.add(getResources().getDrawable(R.drawable.circle_image));
-        drawbleDatas.add(getResources().getDrawable(R.drawable.circle_image));
-        drawbleDatas.add(getResources().getDrawable(R.drawable.circle_image));
+        drawbleDatas.add(getResources().getDrawable(R.drawable.show_img_01));
+        drawbleDatas.add(getResources().getDrawable(R.drawable.show_img_02));
+        drawbleDatas.add(getResources().getDrawable(R.drawable.show_img_03));
+        drawbleDatas.add(getResources().getDrawable(R.drawable.show_img_04));
+        drawbleDatas.add(getResources().getDrawable(R.drawable.show_img_05));
 
         pagerAdapter = new CustomPagerAdapter(drawbleDatas,this);
 
@@ -42,10 +45,10 @@ public class AutoScrollViewPaperActivity extends AppCompatActivity {
         autoScrollViewPager.setAdapter(pagerAdapter);
 
         autoScrollViewPager.startAutoScroll();
-        autoScrollViewPager.setInterval(2000);
+        autoScrollViewPager.setInterval(3000);
         autoScrollViewPager.setCycle(true);
-        autoScrollViewPager.setSwipeScrollDurationFactor(3000);
-        autoScrollViewPager.setAutoScrollDurationFactor(10);
+        autoScrollViewPager.setSwipeScrollDurationFactor(1);
+        autoScrollViewPager.setAutoScrollDurationFactor(0.01);
     }
 
     private class  CustomPagerAdapter extends PagerAdapter{
@@ -81,11 +84,32 @@ public class AutoScrollViewPaperActivity extends AppCompatActivity {
             //return super.instantiateItem(container, position);
             View view = inflater.inflate(R.layout.layout_view_paper_item, null);
             ImageView imageView = (ImageView)view.findViewById(R.id.image_view_item);
+            imageView.setTag(position);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                 imageView.setBackground(drawbleDatas.get(position));
+                imageView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(getApplicationContext(),
+                                "click:"+v.getTag(),
+                                Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
-            container.addView(view, 0);
 
+            LinearLayout ll = (LinearLayout)view.findViewById(R.id.ll);
+            ll.removeAllViews();
+            for (int i = 0; i < drawbleDatas.size(); i++) {
+                ImageView dotImage = new ImageView(getApplicationContext());
+                if(i == position){
+                    dotImage.setBackgroundDrawable(getResources().getDrawable(R.drawable.red_bg));
+                }else{
+                    dotImage.setBackgroundDrawable(getResources().getDrawable(R.drawable.blue_bg));
+                }
+                ll.addView(dotImage);
+            }
+
+            container.addView(view, 0);
             views.add(view);
 
             return view;
