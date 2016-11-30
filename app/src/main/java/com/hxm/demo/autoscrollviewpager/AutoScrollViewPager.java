@@ -88,6 +88,25 @@ public class AutoScrollViewPager extends ViewPager{
     }
 
     /**
+     * set ViewPager scroller to change animation duration when sliding
+     */
+    private void setViewPagerScroller() {
+        try {
+            Field scrollerField = ViewPager.class.getDeclaredField("mScroller");
+            scrollerField.setAccessible(true);
+            Field interpolatorField = ViewPager.class.getDeclaredField("sInterpolator");
+            interpolatorField.setAccessible(true);
+
+            scroller = new CustomDurationScroller(
+                    getContext(),
+                    (Interpolator)interpolatorField.get(null));
+            scrollerField.set(this, scroller);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
      * start auto scroll, first scroll delay time is {@link #getInterval()}
      */
     public void startAutoScroll() {
@@ -133,24 +152,7 @@ public class AutoScrollViewPager extends ViewPager{
         handler.sendEmptyMessageDelayed(SCROLL_WHAT, delayTimeInMills);
     }
 
-    /**
-     * set ViewPager scroller to change animation duration when sliding
-     */
-    private void setViewPagerScroller() {
-        try {
-            Field scrollerField = ViewPager.class.getDeclaredField("mScroller");
-            scrollerField.setAccessible(true);
-            Field interpolatorField = ViewPager.class.getDeclaredField("sInterpolator");
-            interpolatorField.setAccessible(true);
 
-            scroller = new CustomDurationScroller(
-                    getContext(),
-                    (Interpolator)interpolatorField.get(null));
-            scrollerField.set(this, scroller);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     /**
      * scroll only once
@@ -212,7 +214,8 @@ public class AutoScrollViewPager extends ViewPager{
              * else scroll to last one when current item is first one, scroll to first one when current item is last
              * one.
              */
-            if ((currentItem == 0 && downX <= touchX) || (currentItem == pageCount - 1 && downX >= touchX)) {
+            if ((currentItem == 0 && downX <= touchX)
+                    || (currentItem == pageCount - 1 && downX >= touchX)) {
                 if (slideBorderMode == SLIDE_BORDER_MODE_TO_PARENT) {
                     getParent().requestDisallowInterceptTouchEvent(false);
                 } else {
