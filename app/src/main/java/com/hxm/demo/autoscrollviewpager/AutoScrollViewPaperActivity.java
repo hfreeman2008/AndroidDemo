@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -45,7 +44,6 @@ public class AutoScrollViewPaperActivity extends AppCompatActivity {
         drawbleDatas.add(getResources().getDrawable(R.drawable.banner3));
         drawbleDatas.add(getResources().getDrawable(R.drawable.banner4));
 
-
         pagerAdapter = new CustomPagerAdapter(drawbleDatas,this);
 
         autoScrollViewPager = (AutoScrollViewPager)findViewById(R.id.view_pager);
@@ -70,9 +68,9 @@ public class AutoScrollViewPaperActivity extends AppCompatActivity {
             init();
         }
 
-        public CustomPagerAdapter(List<Drawable> views, Context context) {
+        public CustomPagerAdapter(List<Drawable> drawbleDatas, Context context) {
             super();
-            this.drawbleDatas = views;
+            this.drawbleDatas = drawbleDatas;
             this.context = context;
             init();
         }
