@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -33,11 +34,17 @@ public class AutoScrollViewPaperActivity extends AppCompatActivity {
 
     private void init() {
         drawbleDatas = new ArrayList<Drawable>();
-        drawbleDatas.add(getResources().getDrawable(R.drawable.show_img_01));
-        drawbleDatas.add(getResources().getDrawable(R.drawable.show_img_02));
-        drawbleDatas.add(getResources().getDrawable(R.drawable.show_img_03));
-        drawbleDatas.add(getResources().getDrawable(R.drawable.show_img_04));
-        drawbleDatas.add(getResources().getDrawable(R.drawable.show_img_05));
+//        drawbleDatas.add(getResources().getDrawable(R.drawable.show_img_01));
+//        drawbleDatas.add(getResources().getDrawable(R.drawable.show_img_02));
+//        drawbleDatas.add(getResources().getDrawable(R.drawable.show_img_03));
+//        drawbleDatas.add(getResources().getDrawable(R.drawable.show_img_04));
+//        drawbleDatas.add(getResources().getDrawable(R.drawable.show_img_05));
+
+        drawbleDatas.add(getResources().getDrawable(R.drawable.banner1));
+        drawbleDatas.add(getResources().getDrawable(R.drawable.banner2));
+        drawbleDatas.add(getResources().getDrawable(R.drawable.banner3));
+        drawbleDatas.add(getResources().getDrawable(R.drawable.banner4));
+
 
         pagerAdapter = new CustomPagerAdapter(drawbleDatas,this);
 
@@ -45,7 +52,7 @@ public class AutoScrollViewPaperActivity extends AppCompatActivity {
         autoScrollViewPager.setAdapter(pagerAdapter);
 
         autoScrollViewPager.startAutoScroll();
-        autoScrollViewPager.setInterval(3000);
+        autoScrollViewPager.setInterval(2000);
         autoScrollViewPager.setCycle(true);
         autoScrollViewPager.setSwipeScrollDurationFactor(1);
         autoScrollViewPager.setAutoScrollDurationFactor(0.01);
@@ -72,6 +79,7 @@ public class AutoScrollViewPaperActivity extends AppCompatActivity {
 
         private void init(){
             inflater = getLayoutInflater();
+            views.clear();
         }
 
         @Override
@@ -101,6 +109,7 @@ public class AutoScrollViewPaperActivity extends AppCompatActivity {
             ll.removeAllViews();
             for (int i = 0; i < drawbleDatas.size(); i++) {
                 ImageView dotImage = new ImageView(getApplicationContext());
+
                 if(i == position){
                     dotImage.setBackgroundDrawable(getResources().getDrawable(R.drawable.red_bg));
                 }else{
@@ -108,10 +117,8 @@ public class AutoScrollViewPaperActivity extends AppCompatActivity {
                 }
                 ll.addView(dotImage);
             }
-
-            container.addView(view, 0);
             views.add(view);
-
+            container.addView(view, 0);
             return view;
         }
 

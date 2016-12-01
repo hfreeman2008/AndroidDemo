@@ -15,4 +15,6 @@
     <string name="circle_image">circle image view </string>
     <string name="circle_gradient_image">circle gradient image view </string>
     <string name="rect_image">rect image view </string>
+    <string name="switch_to">switch to  another style</string>
+
 </resources>

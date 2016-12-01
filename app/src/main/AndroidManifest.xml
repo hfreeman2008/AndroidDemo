@@ -8,19 +8,28 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+                  >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".swipelistview.SimpleActivity"/>
+        <activity
+
+            android:name=".swipelistview.SimpleActivity"/>
         <activity android:name=".swipelistview.DifferentMenuActivity"/>
-        <activity android:name=".swipelistview.SwipeMainActivity"/>
-        <activity android:name=".circularimageview.CircularImageViewActivity">
+        <activity
+            android:label="@string/swip_menu_listview"
+            android:name=".swipelistview.SwipeMainActivity"/>
+        <activity
+            android:label="@string/custer_image"
+            android:name=".circularimageview.CircularImageViewActivity">
         </activity>
-        <activity android:name=".autoscrollviewpager.AutoScrollViewPaperActivity">
+        <activity
+            android:label="@string/auto_scroll_view_paper"
+            android:name=".autoscrollviewpager.AutoScrollViewPaperActivity">
         </activity>
     </application>
 
