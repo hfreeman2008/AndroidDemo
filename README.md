@@ -27,4 +27,6 @@ http://blog.csdn.net/hfreeman2008/article/details/53381156
 
 ##auto scroll view pager
 
+![Image text](auto_scroll_view_pager.gif)
+
 https://github.com/Trinea/android-auto-scroll-view-pager
