@@ -23,8 +23,11 @@ https://github.com/baoyongzhang/SwipeMenuListView
 ![Image text](customer_image_view.png)
 
 csdn blog:
+
 http://blog.csdn.net/hfreeman2008/article/details/53381156
+
 github:
+
 https://github.com/lopspower/CircularImageView
 
 ##auto scroll view pager
@@ -32,6 +35,7 @@ https://github.com/lopspower/CircularImageView
 ![Image text](auto_scroll_view_pager.gif)
 
 github:
+
 https://github.com/Trinea/android-auto-scroll-view-pager
 
 
@@ -39,6 +43,7 @@ https://github.com/Trinea/android-auto-scroll-view-pager
 
 
 github:
+
 https://github.com/johannilsson/android-pulltorefresh
 
 
