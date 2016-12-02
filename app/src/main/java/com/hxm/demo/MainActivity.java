@@ -8,12 +8,14 @@ import android.widget.Button;
 import com.hxm.demo.circularimageview.CircularImageViewActivity;
 import com.hxm.demo.swipelistview.SwipeMainActivity;
 import com.hxm.demo.autoscrollviewpager.AutoScrollViewPaperActivity;
+import com.hxm.demo.pulltorefresh.PullToRefreshActivity;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button button_swip_menu_listview;
     private Button button_circle_view;
     private Button button_auto_scroll_view_paper;
+    private Button button_pull_to_refresh;
     private Button button_test;
 
 
@@ -46,6 +48,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplication(),AutoScrollViewPaperActivity.class));
+            }
+        });
+
+        button_pull_to_refresh = (Button)findViewById(R.id.button_pull_to_refresh);
+        button_pull_to_refresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplication(),PullToRefreshActivity.class));
             }
         });
 

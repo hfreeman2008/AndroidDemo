@@ -16,5 +16,13 @@
     <string name="circle_gradient_image">circle gradient image view </string>
     <string name="rect_image">rect image view </string>
     <string name="switch_to">switch to  another style</string>
+    <string name="pull_to_refresh">pull to refresh</string>
+
+    <string name="pull_to_refresh_ex_1">pull to refresh ex 1</string>
+    <string name="pull_to_refresh_ex_2">pull to refresh ex 2</string>
+    <string name="pull_to_refresh_pull_label">Pull to refresh...</string>
+    <string name="pull_to_refresh_release_label">Release to refresh...</string>
+    <string name="pull_to_refresh_refreshing_label">Loading...</string>
+    <string name="pull_to_refresh_tap_label">Tap to refresh...</string>
 
 </resources>

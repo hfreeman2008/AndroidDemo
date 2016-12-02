@@ -34,10 +34,18 @@
         />
 
     <Button
-        android:id="@+id/button_test"
+        android:id="@+id/button_pull_to_refresh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/button_auto_scroll_view_paper"
+        android:text="@string/pull_to_refresh"
+        />
+
+    <Button
+        android:id="@+id/button_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_pull_to_refresh"
         android:text="@string/test"
         />
 

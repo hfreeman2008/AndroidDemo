@@ -12,4 +12,11 @@
     <string name="circle_gradient_image">圆形渐变图片</string>
     <string name="rect_image">圆角矩形图片</string>
     <string name="switch_to">切换到别外一个样式</string>
+    <string name="pull_to_refresh">拉动刷新</string>
+    <string name="pull_to_refresh_ex_1">拉动刷新样式1</string>
+    <string name="pull_to_refresh_ex_2">拉动刷新样式2</string>
+    <string name="pull_to_refresh_pull_label">下拉刷新</string>
+    <string name="pull_to_refresh_release_label">放开以刷新</string>
+    <string name="pull_to_refresh_refreshing_label">载入中</string>
+    <string name="pull_to_refresh_tap_label">点击这里刷新</string>
 </resources>
