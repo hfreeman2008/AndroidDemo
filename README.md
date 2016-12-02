@@ -24,6 +24,8 @@ https://github.com/baoyongzhang/SwipeMenuListView
 
 csdn blog:
 http://blog.csdn.net/hfreeman2008/article/details/53381156
+github:
+https://github.com/lopspower/CircularImageView
 
 ##auto scroll view pager
 

@@ -113,7 +113,7 @@ public class AutoScrollViewPager extends ViewPager{
      * start auto scroll, first scroll delay time is {@link #getInterval()}
      */
     public void startAutoScroll() {
-        Log.i(TAG,"startAutoScroll:--sendScrollMessage");
+        //Log.i(TAG,"startAutoScroll:--sendScrollMessage");
         isAutoScroll = true;
         //sendScrollMessage((long)(interval + scroller.getDuration() / autoScrollFactor * swipeScrollFactor));
         sendScrollMessage((long)(interval));
@@ -125,7 +125,7 @@ public class AutoScrollViewPager extends ViewPager{
      * @param delayTimeInMills first scroll delay time
      */
     public void startAutoScroll(int delayTimeInMills) {
-        Log.i(TAG,"startAutoScroll-int:--sendScrollMessage:"+delayTimeInMills);
+        //Log.i(TAG,"startAutoScroll-int:--sendScrollMessage:"+delayTimeInMills);
         isAutoScroll = true;
         sendScrollMessage(delayTimeInMills);
     }
@@ -134,7 +134,7 @@ public class AutoScrollViewPager extends ViewPager{
      * stop auto scroll
      */
     public void stopAutoScroll() {
-        Log.i(TAG,"stopAutoScroll");
+        //Log.i(TAG,"stopAutoScroll");
         isAutoScroll = false;
         handler.removeMessages(SCROLL_WHAT);
     }
@@ -154,7 +154,7 @@ public class AutoScrollViewPager extends ViewPager{
     }
 
     private void sendScrollMessage(long delayTimeInMills) {
-        Log.i(TAG,"sendScrollMessage(long delayTimeInMills)"+delayTimeInMills);
+        //Log.i(TAG,"sendScrollMessage(long delayTimeInMills)"+delayTimeInMills);
         /** remove messages before, keeps one message is running at most **/
         handler.removeMessages(SCROLL_WHAT);
         handler.sendEmptyMessageDelayed(SCROLL_WHAT, delayTimeInMills);
@@ -365,15 +365,14 @@ public class AutoScrollViewPager extends ViewPager{
 
             switch (msg.what) {
                 case SCROLL_WHAT:
-                    Log.i(TAG,"handleMessage---SCROLL_WHAT");
+                    //Log.i(TAG,"handleMessage---SCROLL_WHAT");
                     AutoScrollViewPager pager = this.autoScrollViewPager.get();
                     if (pager != null) {
                         pager.scroller.setScrollDurationFactor(pager.autoScrollFactor);
                         pager.scrollOnce();
                         pager.scroller.setScrollDurationFactor(pager.swipeScrollFactor);
-                        Log.i(TAG,"handleMessage---SCROLL_WHAT--pager.interval"+pager.interval);
-                        Log.i(TAG,"handleMessage---SCROLL_WHAT--pager.scroller.getDuration()"
-                                +pager.scroller.getDuration());
+                        //Log.i(TAG,"handleMessage---SCROLL_WHAT--pager.interval"+pager.interval);
+                        //Log.i(TAG,"handleMessage---SCROLL_WHAT--pager.scroller.getDuration()"+pager.scroller.getDuration());
                         pager.sendScrollMessage(pager.interval + pager.scroller.getDuration());
                     }
                     break;
