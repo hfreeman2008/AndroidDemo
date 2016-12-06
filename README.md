@@ -61,13 +61,15 @@ https://github.com/liaohuqiu/android-Ultra-Pull-To-Refresh
 usage:
 </br>
 1.app/build.gradle
-
+```xml
 //add for pull to refresh 2
 compile 'in.srain.cube:clog:1.0.2'
 compile 'in.srain.cube:cube-sdk:1.0.44.39-SNAPSHOT@aar'
 compile 'in.srain.cube:ultra-ptr:1.0.11'
+```
 
 2.build.gradle
+```xml
 allprojects {
     repositories {
         jcenter()
@@ -78,3 +80,4 @@ allprojects {
         }
     }
 }
+```
