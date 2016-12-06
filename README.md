@@ -43,7 +43,7 @@ csdn blog:
 http://blog.csdn.net/hfreeman2008/article/details/53433364
 </br>
 ##pull to refresh 1
-![Image text](pull_01.png)![Image text](pull_02.png)![Image text](pull_03.png)
+![Image text](pull_style_01.png)
 </br>
 github:
 </br>
