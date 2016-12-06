@@ -42,7 +42,7 @@ csdn blog:
 </br>
 http://blog.csdn.net/hfreeman2008/article/details/53433364
 </br>
-##pull to refresh
+##pull to refresh 1
 
 </br>
 github:
@@ -51,4 +51,30 @@ https://github.com/johannilsson/android-pulltorefresh
 </br>
 
 
+##pull to refresh 2
 
+</br>
+github:
+</br>
+https://github.com/liaohuqiu/android-Ultra-Pull-To-Refresh
+</br>
+usage:
+</br>
+1.app/build.gradle
+
+//add for pull to refresh 2
+compile 'in.srain.cube:clog:1.0.2'
+compile 'in.srain.cube:cube-sdk:1.0.44.39-SNAPSHOT@aar'
+compile 'in.srain.cube:ultra-ptr:1.0.11'
+
+2.build.gradle
+allprojects {
+    repositories {
+        jcenter()
+        //add for pull to refresh 2
+        mavenCentral();
+        maven {
+            url 'https://oss.sonatype.org/content/repositories/snapshots'
+        }
+    }
+}
