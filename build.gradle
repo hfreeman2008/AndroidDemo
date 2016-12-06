@@ -15,6 +15,11 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        //add for pull to refresh 2
+        mavenCentral();
+        maven {
+            url 'https://oss.sonatype.org/content/repositories/snapshots'
+        }
     }
 }
 

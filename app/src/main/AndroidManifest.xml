@@ -33,8 +33,10 @@
             android:label="@string/pull_to_refresh">
         </activity>
         <activity
-            android:label="@string/pull_to_refresh_ex_1"
-            android:name=".pulltorefresh.PullToRefreshActivity1">
+            android:name=".pulltorefresh.PullToRefreshActivity1"
+            android:label="@string/pull_to_refresh_ex_1">
+        </activity>
+        <activity android:name=".pulltorefresh.PullToRefreshActivity2">
         </activity>
     </application>
 

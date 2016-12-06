@@ -26,5 +26,9 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:22.2.1'
     testCompile 'junit:junit:4.12'
+    //add for pull to refresh 2
+    compile 'in.srain.cube:clog:1.0.2'
+    compile 'in.srain.cube:cube-sdk:1.0.44.39-SNAPSHOT@aar'
+    compile 'in.srain.cube:ultra-ptr:1.0.11'
 }
 

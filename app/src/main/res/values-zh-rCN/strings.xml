@@ -19,4 +19,6 @@
     <string name="pull_to_refresh_release_label">放开以刷新</string>
     <string name="pull_to_refresh_refreshing_label">载入中</string>
     <string name="pull_to_refresh_tap_label">点击这里刷新</string>
+
+    <string name="text_view_refresh">TextView 刷新 :</string>
 </resources>

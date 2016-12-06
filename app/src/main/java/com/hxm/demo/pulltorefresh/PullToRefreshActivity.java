@@ -33,7 +33,7 @@ public class PullToRefreshActivity extends AppCompatActivity {
         pull_to_refresh_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(getApplication(),SwipeMainActivity.class));
+                startActivity(new Intent(getApplication(),PullToRefreshActivity2.class));
             }
         });
     }
