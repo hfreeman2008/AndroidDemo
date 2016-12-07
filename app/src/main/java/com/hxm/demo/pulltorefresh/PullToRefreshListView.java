@@ -17,7 +17,6 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.AbsListView.OnScrollListener;
-
 import com.hxm.demo.R;
 
 public class PullToRefreshListView extends ListView implements OnScrollListener {
@@ -260,8 +259,7 @@ public class PullToRefreshListView extends ListView implements OnScrollListener 
                     ViewGroup.LayoutParams.WRAP_CONTENT);
         }
 
-        int childWidthSpec = ViewGroup.getChildMeasureSpec(0,
-                0 + 0, p.width);
+        int childWidthSpec = ViewGroup.getChildMeasureSpec(0,0 + 0, p.width);
         int lpHeight = p.height;
         int childHeightSpec;
         if (lpHeight > 0) {
@@ -273,8 +271,10 @@ public class PullToRefreshListView extends ListView implements OnScrollListener 
     }
 
     @Override
-    public void onScroll(AbsListView view, int firstVisibleItem,
-                         int visibleItemCount, int totalItemCount) {
+    public void onScroll(AbsListView view,
+                         int firstVisibleItem,
+                         int visibleItemCount,
+                         int totalItemCount) {
         // When the refresh view is completely visible, change the text to say
         // "Release to refresh..." and flip the arrow drawable.
         if (mCurrentScrollState == SCROLL_STATE_TOUCH_SCROLL
@@ -376,11 +376,6 @@ public class PullToRefreshListView extends ListView implements OnScrollListener 
         }
     }
 
-    /**
-     * Invoked when the refresh view is clicked on. This is mainly used when
-     * there's only a few items in the list and it's not possible to drag the
-     * list.
-     */
     private class OnClickRefreshListener implements OnClickListener {
 
         @Override
@@ -390,20 +385,10 @@ public class PullToRefreshListView extends ListView implements OnScrollListener 
                 onRefresh();
             }
         }
-
     }
 
-    /**
-     * Interface definition for a callback to be invoked when list should be
-     * refreshed.
-     */
     public interface OnRefreshListener {
-        /**
-         * Called when the list should be refreshed.
-         * <p>
-         * A call to {@link PullToRefreshListView #onRefreshComplete()} is
-         * expected to indicate that the refresh has completed.
-         */
+
         public void onRefresh();
     }
 }

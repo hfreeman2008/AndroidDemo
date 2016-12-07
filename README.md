@@ -1,5 +1,5 @@
 # AndroidDemo
-
+---------------------------------------------------------------------
 ## SwipeMenuListView
 </br>
 (1) simple swipe menu listview
@@ -18,6 +18,7 @@ http://blog.csdn.net/hfreeman2008/article/details/53350339
 https://github.com/baoyongzhang/SwipeMenuListView
 
 </br>
+---------------------------------------------------------------------
 ## customer image:
 
 ![Image text](customer_image_view.png)
@@ -30,6 +31,7 @@ github:
 </br>
 https://github.com/lopspower/CircularImageView
 </br>
+---------------------------------------------------------------------
 ##auto scroll view pager
 
 ![Image text](auto_scroll_view_pager.gif)
@@ -42,6 +44,8 @@ csdn blog:
 </br>
 http://blog.csdn.net/hfreeman2008/article/details/53433364
 </br>
+
+---------------------------------------------------------------------
 ##pull to refresh 1
 ![Image text](pull_style_01.png)
 </br>
@@ -49,14 +53,18 @@ github:
 </br>
 https://github.com/johannilsson/android-pulltorefresh
 </br>
+http://blog.csdn.net/hfreeman2008/article/details/53504099
+</br>
 
-
+---------------------------------------------------------------------
 ##pull to refresh 2
 ![Image text](pull_style_02.gif)
 </br>
 github:
 </br>
 https://github.com/liaohuqiu/android-Ultra-Pull-To-Refresh
+</br>
+http://blog.csdn.net/hfreeman2008/article/details/53504106
 </br>
 usage:
 </br>
